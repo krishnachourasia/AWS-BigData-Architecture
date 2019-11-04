@@ -42,7 +42,7 @@ IoTclient.configureMQTTOperationTimeout(5)
 IoTclient.connect()
 IoTclient.publish(TOPIC, "connected", 0)
 
-with open('seattle-weather.csv', newline='') as csvfile:
+with open('devicedata.csv', newline='') as csvfile:
     csv.reader(csvfile, delimiter=',', quotechar='"')
     next(csvfile)
     for row in csvfile:
