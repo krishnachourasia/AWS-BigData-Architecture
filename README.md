@@ -1,7 +1,6 @@
 # Health Care Device Management And Log Analyser with Issue Resolver (Architecture)
 
 ## Creating Things, Certificates, and Policies
-
 1. Go to IoT Core
 2. Create a thing called `device-sensor-1`
     Name it `device-sensor-1` 
@@ -13,9 +12,8 @@
 4. Create a policy for the thing and attach it to the certificate
  
 ## Test subscribing and publishing to an IoT topic
-    
-1. Subscribe and publish to a topic
-2. Setup a Python virtual environment for the IoT Script
+    1. Subscribe and publish to a topic
+    2. Setup a Python virtual environment for the IoT Script
 
 ```bash
 python3 -m venv venv
@@ -49,7 +47,6 @@ pip install AWSIoTPythonSDK
 
 
 ## Kinesis Analytics Streams
-
 1. Go to Kinesis
 2. Create the Analytics Stream using
 
@@ -68,7 +65,6 @@ GROUP BY
 -> It will show data in every 10 Seconds.
 
 ## Lambda Function for Continous Monitoring and Alerting
-
 1. Go to Lambda
 2. Create a Lambda Function from the blueprints for taking data from Firehouse and creating an SNS alert.
 3. Grant the required permission and create a role.
@@ -76,14 +72,12 @@ GROUP BY
 5. Use the SNS topic to send notifications from inside the Lambda Function
 
 ## Setting up the SNS for Alert
-
 1. Go to SNS
 2. Create the topic for Alerting the user
 3. Set up the subscriptions with the sms or Email configurations 
 4. Or setup a HTTP notification
 
 ## Setting up Glue for Incoming Kinesis Stream
-
 1. Go to AWS Glue
 2. Create a new Job
 3. Configure Job properties
@@ -93,7 +87,6 @@ GROUP BY
 6. Set-up the Schema
 
 ## Setting up the Lake Formation
-
 1. Go to Lake Formation
 2. Register Location, by creating the S3 bucket.
 3. Set-up the IAM role for the S3 bucket.
@@ -102,7 +95,6 @@ GROUP BY
 
 
 ## Setting up a Lambda Function for inerting data into Elastic Search from data lake.
-
 1. Go to Lambda
 2. Create a Lambda Function from the blueprints for taking data from S3 and to Elastic Search.
 3. Grant the required permission and create a role.
@@ -110,7 +102,6 @@ GROUP BY
 5. Use the Lambda function to send the data to Elastic Search Service.
 
 ## Setting up Elastic Search and Kibana
-
 1. Go to Elastic Search Service
 2. Create a domain.
 3. Choose the deployment type.
@@ -123,7 +114,6 @@ GROUP BY
 10. Discover and Visualize the data as required.
 
 ## Setting up Glue for Fetching the data from given Knowledge Base
-
 1. Go to AWS Glue
 2. Create a new Job
 3. Configure Job properties
@@ -133,7 +123,6 @@ GROUP BY
 6. Set-up the Schema
 
 ## Setting up the Amazon Athena
-
 1. Go to Amazon Athena.
 2. Create a database and table.
 3. Specify the dataset source and name as in S3 Bucket.
@@ -166,7 +155,6 @@ OR
 
 
 ## Setting up the DynamoDB Table and Stream
-
 1. Go to DynamoDB Dashboard.
 2. Create a new table.
 3. Provide the Partition key and sort key as required.
@@ -176,7 +164,6 @@ OR
 
 
 ## Setting up a Lambda Function for resolving the service desk issue tickets
-
 1. Go to Lambda
 2. Create a Lambda Function from the blueprints for taking data from DynamoDB Stream and to generate the SNS Notification.
 3. Grant the required permission and create a role.
@@ -184,8 +171,7 @@ OR
 5. Use the Lambda function to use the API endpoints of the ML Model and classify the issue.
 6. After classifying, send the required steps docuemnt from the knowledge base using the SNS Topic.
 
-## Setting up the SNS for Alert
-
+## Setting up the SNS for Replying the solution
 1. Go to SNS
 2. Create the topic for Replying the user about the steps to perform for solving the issue.
 3. Set up the subscriptions with the sms or Email configurations.
