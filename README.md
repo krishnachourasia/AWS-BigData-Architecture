@@ -1,4 +1,5 @@
-# Health Care Device Management And Log Analyser with Issue Resolver (Architecture)
+# Device Management And Log Analyser with Issue Resolver (Architecture)
+![UML Diagram](https://github.com/krishnachourasia/AWS-BigData-Architecture/blob/master/Architecture%20Diagram.jpeg)
 
 ## Creating Things, Certificates, and Policies
 1. Go to IoT Core
